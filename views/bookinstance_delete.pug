@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  //script
+     //| console.log(bookinstance)
+
+  h1 #{title}: #{bookinstance.imprint}
+  p= bookinstance.status
+  p= bookinstance.due_back
+
+  p #[Do you really want to delete this Book?]
+  
+  form(method='POST' action='')
+    div.form-group
+      input#bookinstance.form-control(type='hidden',name='bookinstanceid', required='true', value=bookinstance._id )
+
+    button.btn.btn-primary(type='submit') Delete
